@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+interface SideNavToggle {
+  screenWidth: number;
+  isOpen: boolean;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'website_front_angular';
+  title = 'sidenav';
+  isSideNavOpen = true;
+  screenWidth = 0;
+
+  onToggleSideNav(data: SideNavToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isSideNavOpen = data.isOpen;
+  }
 }
