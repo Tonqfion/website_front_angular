@@ -1,0 +1,21 @@
+<div [ngClass]="isOpen ? 'sidenav-collapsed': ''" class="sidenav">
+  <div class="logo-container">
+    <button (click)="toggleCollapse()" class="logo">B</button>
+    <div *ngIf="isOpen" @fadeInOut class="logo-text">Bertrand B</div>
+    <button (click)="closeSidenav()" *ngIf="isOpen" @rotate class="btn-close">
+      <i class="fa-solid fa-close"></i>
+    </button>
+  </div>
+  <ul class="sidenav-nav">
+    <li *ngFor="let data of navData" class="sidenav-nav-item">
+      <a [href]="data.link"
+         class="sidenav-nav-link"
+      >
+        <i [class]="data.icon" class="sidenav-link-icon"></i>
+        <span *ngIf="isOpen" @fadeInOut class="sidenav-link-text">
+                    {{data.label}}
+                </span>
+      </a>
+    </li>
+  </ul>
+</div>
