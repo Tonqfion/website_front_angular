@@ -11,8 +11,7 @@ export class ExperiencesComponent implements OnInit {
   logoClass: string;
   experiences: any[] = [];
 
-  constructor(
-    private apiService: ApiService) {
+  constructor(private apiService: ApiService) {
     this.titleText = "Expériences";
     this.logoClass = "fa-solid fa-briefcase";
   }

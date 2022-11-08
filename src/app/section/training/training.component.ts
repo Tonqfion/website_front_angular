@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from "../../services/api.service";
 
 @Component({
   selector: 'app-training',
@@ -8,13 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class TrainingComponent implements OnInit {
   titleText: string;
   logoClass: string;
+  trainings: any[] = [];
 
-  constructor() {
+  constructor(private apiService: ApiService) {
     this.titleText = "Formation";
     this.logoClass = "fa-solid fa-graduation-cap";
   }
 
   ngOnInit(): void {
+    this.getAllTrainings();
   }
 
+  getAllTrainings() {
+    this.apiService.getAllTrainings().subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+  }
 }
