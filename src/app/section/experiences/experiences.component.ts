@@ -18,12 +18,12 @@ export class ExperiencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getExperiences();
+    this.getAllExperiences();
   }
 
 
-  getExperiences() {
-    this.apiService.getExperienceList().subscribe({
+  getAllExperiences() {
+    this.apiService.getAllExperiences().subscribe({
       next: (data) => {
         console.log(data)
       },
@@ -32,5 +32,4 @@ export class ExperiencesComponent implements OnInit {
       }
     })
   }
-
 }

@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./training.component.scss']
 })
 export class TrainingComponent implements OnInit {
+  titleText: string;
+  logoClass: string;
 
-  constructor() { }
+  constructor() {
+    this.titleText = "Formation";
+    this.logoClass = "fa-solid fa-graduation-cap";
+  }
 
   ngOnInit(): void {
   }

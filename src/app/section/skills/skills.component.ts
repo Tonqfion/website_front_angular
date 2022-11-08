@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
+  titleText: string;
+  logoClass: string;
 
-  constructor() { }
+  constructor() {
+    this.titleText = "Compétences";
+    this.logoClass = "fa-solid fa-screwdriver-wrench";
+  }
 
   ngOnInit(): void {
   }

@@ -10,8 +10,18 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getExperienceList() {
-    const url = environment.API_URL + 'experiences?populate[0]=company&populate[1]=company.companyLogo';
+  getAllExperiences() {
+    const url = environment.API_URL + 'experiences';
+    return this.httpClient.get(url);
+  }
+
+  getAllCompanies() {
+    const url = environment.API_URL + 'companies';
+    return this.httpClient.get(url);
+  }
+
+  getIntroduction() {
+    const url = environment.API_URL + 'introduction';
     return this.httpClient.get(url);
   }
 }
