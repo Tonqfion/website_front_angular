@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../../services/api.service";
-import {Experience} from "../../data/experience";
+import {ExperienceService} from "../../api/services/experience.service";
 
 @Component({
   selector: 'app-experiences',
@@ -12,7 +11,7 @@ export class ExperiencesComponent implements OnInit {
   logoClass: string;
   experiences: any[] = [];
 
-  constructor(private apiService: ApiService) {
+  constructor(private experienceService: ExperienceService) {
     this.titleText = "Expériences";
     this.logoClass = "fa-solid fa-briefcase";
   }
@@ -23,13 +22,9 @@ export class ExperiencesComponent implements OnInit {
 
 
   getAllExperiences() {
-    this.apiService.getAllExperiences().subscribe({
+    this.experienceService.getExperiences().subscribe({
       next: (data) => {
-        const responseArray: any[] = data.data;
-        console.log(responseArray)
-        for (let experienceResponse of responseArray) {
-          console.log(experienceResponse.attributes.jobTitle);
-        }
+        console.log(data);
       },
       error: (err) => {
         console.log(err);

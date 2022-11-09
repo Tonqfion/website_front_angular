@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TrainingService} from "../../api/services/training.service";
+import {TrainingListResponseDataItem} from "../../api/models/training-list-response-data-item";
 
 @Component({
   selector: 'app-training',
@@ -9,7 +10,7 @@ import {TrainingService} from "../../api/services/training.service";
 export class TrainingComponent implements OnInit {
   titleText: string;
   logoClass: string;
-  trainings: any[] = [];
+  trainings: TrainingListResponseDataItem[] | undefined;
 
   constructor(private trainingsService: TrainingService) {
     this.titleText = "Formation";
@@ -21,9 +22,18 @@ export class TrainingComponent implements OnInit {
   }
 
   getAllTrainings() {
-    this.trainingsService.getTrainings().subscribe({
+    this.trainingsService.getTrainings({
+      populate: 'school'
+    }).subscribe({
       next: (data) => {
-        console.log(data);
+        this.trainings = data.data;
+        console.log(this.trainings);
+        if (this.trainings!!) {
+          for (let training of this.trainings) {
+            console.log(training.attributes?.school?.data?.attributes?.schoolLogo);
+          }
+
+        }
       },
       error: (err) => {
         console.log(err);
