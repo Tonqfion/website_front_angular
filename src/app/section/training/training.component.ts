@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../../services/api.service";
+import {TrainingService} from "../../api/services/training.service";
 
 @Component({
   selector: 'app-training',
@@ -11,7 +11,7 @@ export class TrainingComponent implements OnInit {
   logoClass: string;
   trainings: any[] = [];
 
-  constructor(private apiService: ApiService) {
+  constructor(private trainingsService: TrainingService) {
     this.titleText = "Formation";
     this.logoClass = "fa-solid fa-graduation-cap";
   }
@@ -21,7 +21,7 @@ export class TrainingComponent implements OnInit {
   }
 
   getAllTrainings() {
-    this.apiService.getAllTrainings().subscribe({
+    this.trainingsService.getTrainings().subscribe({
       next: (data) => {
         console.log(data);
       },
