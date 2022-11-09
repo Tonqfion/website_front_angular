@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ApiService {
     return this.httpClient.get(url);
   }
 
-  getAllExperiences() {
+  getAllExperiences(): Observable<any> {
     const url = environment.API_URL + 'experiences';
     return this.httpClient.get(url);
   }

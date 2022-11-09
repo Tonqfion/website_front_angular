@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../services/api.service";
+import {Experience} from "../../data/experience";
 
 @Component({
   selector: 'app-experiences',
@@ -24,7 +25,11 @@ export class ExperiencesComponent implements OnInit {
   getAllExperiences() {
     this.apiService.getAllExperiences().subscribe({
       next: (data) => {
-        console.log(data)
+        const responseArray: any[] = data.data;
+        console.log(responseArray)
+        for (let experienceResponse of responseArray) {
+          console.log(experienceResponse.attributes.jobTitle);
+        }
       },
       error: (err) => {
         console.log(err);

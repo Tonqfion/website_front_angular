@@ -8,5 +8,4 @@ export class Introduction {
     this.userTitle = introResponse.data.attributes.aboutMe;
     this.profilePictureUrl = introResponse.data.attributes.profilePicture.data.attributes.url;
   }
-
 }
