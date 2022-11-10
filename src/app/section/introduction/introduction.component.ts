@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../services/api.service";
 import {Introduction} from "../../data/introduction";
+import {IntroductionService} from "../../api/services/introduction.service";
+import {IntroductionResponse} from "../../api/models/introduction-response";
+import {IntroductionResponseDataObject} from "../../api/models/introduction-response-data-object";
 
 @Component({
   selector: 'app-introduction',
@@ -10,9 +13,9 @@ import {Introduction} from "../../data/introduction";
 export class IntroductionComponent implements OnInit {
   titleText: string;
   logoClass: string;
-  introduction: Introduction | undefined;
+  introduction?: IntroductionResponseDataObject;
 
-  constructor(private apiService: ApiService) {
+  constructor(private introductionService: IntroductionService) {
     this.titleText = "Introduction";
     this.logoClass = "fa-solid fa-home";
   }
@@ -21,15 +24,17 @@ export class IntroductionComponent implements OnInit {
     this.getIntroduction();
   }
 
+  isUndefined(): boolean {
+    return this.introduction != undefined;
+  }
+
 
   getIntroduction() {
-    this.apiService.getIntroduction().subscribe({
+    this.introductionService.getIntroductionsId({id: 1}).subscribe({
       next: (data) => {
-        this.introduction = new Introduction(data);
-        console.log(this.introduction)
+        this.introduction = data.data;
       },
       error: (err) => {
-        console.log(err);
       }
     })
   }

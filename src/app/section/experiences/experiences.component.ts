@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ExperienceService} from "../../api/services/experience.service";
+import {ExperienceListResponseDataItem} from "../../api/models/experience-list-response-data-item";
 
 @Component({
   selector: 'app-experiences',
@@ -9,7 +10,7 @@ import {ExperienceService} from "../../api/services/experience.service";
 export class ExperiencesComponent implements OnInit {
   titleText: string;
   logoClass: string;
-  experiences: any[] = [];
+  experiences?: ExperienceListResponseDataItem[];
 
   constructor(private experienceService: ExperienceService) {
     this.titleText = "Expériences";
@@ -24,7 +25,8 @@ export class ExperiencesComponent implements OnInit {
   getAllExperiences() {
     this.experienceService.getExperiences().subscribe({
       next: (data) => {
-        console.log(data);
+        this.experiences = data.data;
+        console.log(this.experiences);
       },
       error: (err) => {
         console.log(err);

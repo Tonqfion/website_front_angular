@@ -3,4 +3,6 @@
     [logoClass]="logoClass"
     [titleText]="titleText"
   ></app-section-title>
+    <app-unique-experience *ngFor="let experience of experiences"
+    [experience]="experience"></app-unique-experience>
 </section>

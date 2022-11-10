@@ -3,4 +3,9 @@
     [logoClass]="logoClass"
     [titleText]="titleText"
   ></app-section-title>
+  <div *ngIf="isUndefined">
+    <p>{{introduction?.attributes?.profilePicture?.data?.attributes?.url}}</p>
+    <p>{{introduction?.attributes?.userTitle}}</p>
+    <p>{{introduction?.attributes?.aboutMe}}</p></div>
+  <div *ngIf="!isUndefined()"><p>CA LOAD</p></div>
 </section>

@@ -12,6 +12,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SectionTitleComponent} from './commons/section-title/section-title.component';
 import {HttpClientModule} from "@angular/common/http";
+import { UniqueExperienceComponent } from './section/experiences/unique-experience/unique-experience.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
     SkillsComponent,
     TrainingComponent,
     ProjectsComponent,
-    SectionTitleComponent
+    SectionTitleComponent,
+    UniqueExperienceComponent
   ],
   imports: [
     BrowserModule,
