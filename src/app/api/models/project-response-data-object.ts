@@ -1,25 +1,160 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface TrainingResponseDataObject {
+export interface ProjectResponseDataObject {
   attributes?: {
-'trainingName'?: string;
-'trainingLevel'?: 'Undergraduate' | 'Post-Graduate' | 'Master\'s Degree' | 'Doctorate';
-'trainingDescription'?: string;
-'school'?: {
+'projectName'?: string;
+'projectDescription'?: string;
+'skills'?: {
+'data'?: Array<{
+'id'?: number;
+'attributes'?: {
+'skillName'?: string;
+'skillSubCategories'?: {
+'data'?: Array<{
+'id'?: number;
+'attributes'?: {
+'subCategoryName'?: string;
+'mainCategory'?: {
 'data'?: {
 'id'?: number;
 'attributes'?: {
-'schoolAddress'?: {
+'categoryName'?: string;
+'categoryDescription'?: string;
+'createdAt'?: string;
+'updatedAt'?: string;
+'publishedAt'?: string;
+'createdBy'?: {
+'data'?: {
 'id'?: number;
-'streetName'?: string;
-'streetNumber'?: string;
-'cityName'?: string;
-'zipCode'?: string;
-'countryName'?: string;
-'region'?: string;
+'attributes'?: {
+'firstname'?: string;
+'lastname'?: string;
+'username'?: string;
+'email'?: string;
+'resetPasswordToken'?: string;
+'registrationToken'?: string;
+'isActive'?: boolean;
+'roles'?: {
+'data'?: Array<{
+'id'?: number;
+'attributes'?: {
+'name'?: string;
+'code'?: string;
+'description'?: string;
+'users'?: {
+'data'?: Array<{
+'id'?: number;
+'attributes'?: {
 };
-'schoolName'?: string;
-'schoolLogo'?: {
+}>;
+};
+'permissions'?: {
+'data'?: Array<{
+'id'?: number;
+'attributes'?: {
+'action'?: string;
+'subject'?: string;
+'properties'?: any;
+'conditions'?: any;
+'role'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+'createdAt'?: string;
+'updatedAt'?: string;
+'createdBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+'updatedBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+};
+}>;
+};
+'createdAt'?: string;
+'updatedAt'?: string;
+'createdBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+'updatedBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+};
+}>;
+};
+'blocked'?: boolean;
+'preferedLanguage'?: string;
+'createdAt'?: string;
+'updatedAt'?: string;
+'createdBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+'updatedBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+};
+};
+};
+'updatedBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+};
+};
+};
+'subCategoryDescription'?: string;
+'createdAt'?: string;
+'updatedAt'?: string;
+'publishedAt'?: string;
+'createdBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+'updatedBy'?: {
+'data'?: {
+'id'?: number;
+'attributes'?: {
+};
+};
+};
+};
+}>;
+};
+'skillDescription'?: string;
+'skillLogo'?: {
 'data'?: {
 'id'?: number;
 'attributes'?: {
@@ -255,48 +390,6 @@ export interface TrainingResponseDataObject {
 'data'?: {
 'id'?: number;
 'attributes'?: {
-'firstname'?: string;
-'lastname'?: string;
-'username'?: string;
-'email'?: string;
-'resetPasswordToken'?: string;
-'registrationToken'?: string;
-'isActive'?: boolean;
-'roles'?: {
-'data'?: Array<{
-'id'?: number;
-'attributes'?: {
-'name'?: string;
-'code'?: string;
-'description'?: string;
-'users'?: {
-'data'?: Array<{
-'id'?: number;
-'attributes'?: {
-};
-}>;
-};
-'permissions'?: {
-'data'?: Array<{
-'id'?: number;
-'attributes'?: {
-'action'?: string;
-'subject'?: string;
-'properties'?: any;
-'conditions'?: any;
-'role'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'createdAt'?: string;
-'updatedAt'?: string;
-'createdBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
 };
 };
 };
@@ -310,138 +403,7 @@ export interface TrainingResponseDataObject {
 };
 }>;
 };
-'createdAt'?: string;
-'updatedAt'?: string;
-'createdBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'updatedBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-};
-}>;
-};
-'blocked'?: boolean;
-'preferedLanguage'?: string;
-'createdAt'?: string;
-'updatedAt'?: string;
-'createdBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'updatedBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-};
-};
-};
-'updatedBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-};
-};
-};
-'owner'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-'username'?: string;
-'email'?: string;
-'provider'?: string;
-'resetPasswordToken'?: string;
-'confirmationToken'?: string;
-'confirmed'?: boolean;
-'blocked'?: boolean;
-'role'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-'name'?: string;
-'description'?: string;
-'type'?: string;
-'permissions'?: {
-'data'?: Array<{
-'id'?: number;
-'attributes'?: {
-'action'?: string;
-'role'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'createdAt'?: string;
-'updatedAt'?: string;
-'createdBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'updatedBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-};
-}>;
-};
-'users'?: {
-'data'?: Array<{
-'id'?: number;
-'attributes'?: {
-};
-}>;
-};
-'createdAt'?: string;
-'updatedAt'?: string;
-'createdBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'updatedBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-};
-};
-};
-'introduction'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-'userTitle'?: string;
-'aboutMe'?: string;
-'profilePicture'?: {
+'projectPicture'?: {
 'data'?: {
 'id'?: number;
 'attributes'?: {
@@ -651,52 +613,6 @@ export interface TrainingResponseDataObject {
 };
 };
 'folderPath'?: string;
-'createdAt'?: string;
-'updatedAt'?: string;
-'createdBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'updatedBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-};
-};
-};
-'owner'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'createdAt'?: string;
-'updatedAt'?: string;
-'publishedAt'?: string;
-'createdBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-'updatedBy'?: {
-'data'?: {
-'id'?: number;
-'attributes'?: {
-};
-};
-};
-};
-};
-};
 'createdAt'?: string;
 'updatedAt'?: string;
 'createdBy'?: {

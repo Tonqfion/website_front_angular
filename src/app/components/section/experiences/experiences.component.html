@@ -1,0 +1,10 @@
+<section id="experiences">
+  <app-section-title
+    [logoClass]="logoClass"
+    [titleText]="titleText"
+  ></app-section-title>
+  <div class="experiences-container">
+    <app-unique-experience *ngFor="let experience of experiences"
+                           [experience]="experience"></app-unique-experience>
+  </div>
+</section>

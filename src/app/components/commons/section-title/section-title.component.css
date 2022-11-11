@@ -1,0 +1,22 @@
+.title-container {
+  display: flex;
+  margin: 2rem 0;
+  justify-content: space-between;
+}
+.title-container h2 {
+  color: var(--primary);
+  text-transform: uppercase;
+  border-bottom: solid 3px var(--primary);
+  margin-bottom: 0;
+  flex-grow: 2;
+}
+.title-container .section-logo {
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-left: 4rem;
+}
+
+/*# sourceMappingURL=section-title.component.css.map */

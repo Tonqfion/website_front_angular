@@ -7,6 +7,7 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 import { CompanyService } from './services/company.service';
 import { ExperienceService } from './services/experience.service';
 import { IntroductionService } from './services/introduction.service';
+import { ProjectService } from './services/project.service';
 import { SchoolService } from './services/school.service';
 import { SkillService } from './services/skill.service';
 import { SkillCategoryService } from './services/skill-category.service';
@@ -28,6 +29,7 @@ import { UsersPermissionsAuthService } from './services/users-permissions-auth.s
     CompanyService,
     ExperienceService,
     IntroductionService,
+    ProjectService,
     SchoolService,
     SkillService,
     SkillCategoryService,

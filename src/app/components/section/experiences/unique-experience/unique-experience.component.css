@@ -1,0 +1,19 @@
+.unique-experience-container {
+  display: flex;
+}
+.unique-experience-container app-date-container {
+  align-self: center;
+  margin: 0.5rem 2rem 0.5rem 0.5rem;
+}
+.unique-experience-container mat-card {
+  flex-grow: 1;
+  margin: 1rem 0;
+}
+.unique-experience-container mat-card mat-card-header img {
+  border: 2px solid #424242;
+}
+.unique-experience-container mat-card mat-card-content {
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=unique-experience.component.css.map */

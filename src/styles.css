@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 :root {
-  --primary: #B73E3E;
-  --secondary: #EAEAEA;
-  --tertiary: #3C4048;
+  --primary: #3f51b5;
+  --accent: #ff4081;
+  --warn: #f44336;
+  --dark: #424242;
 }
 
 * {
@@ -12,10 +13,17 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  position: relative;
-  font-family: "Roboto", sans-serif;
-  background: var(--secondary);
+  margin: 0;
+  background: #f3f6f4;
+}
+
+.mat-typography {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 /*# sourceMappingURL=styles.css.map */

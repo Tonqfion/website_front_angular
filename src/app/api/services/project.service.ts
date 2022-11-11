@@ -9,14 +9,14 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
-import { TrainingListResponse } from '../models/training-list-response';
-import { TrainingRequest } from '../models/training-request';
-import { TrainingResponse } from '../models/training-response';
+import { ProjectListResponse } from '../models/project-list-response';
+import { ProjectRequest } from '../models/project-request';
+import { ProjectResponse } from '../models/project-response';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TrainingService extends BaseService {
+export class ProjectService extends BaseService {
   constructor(
     config: ApiConfiguration,
     http: HttpClient
@@ -25,17 +25,17 @@ export class TrainingService extends BaseService {
   }
 
   /**
-   * Path part for operation getTrainings
+   * Path part for operation getProjects
    */
-  static readonly GetTrainingsPath = '/trainings';
+  static readonly GetProjectsPath = '/projects';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getTrainings()` instead.
+   * To access only the response body, use `getProjects()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getTrainings$Response(params?: {
+  getProjects$Response(params?: {
 
     /**
      * Sort by attributes ascending (asc) or descending (desc)
@@ -84,9 +84,9 @@ export class TrainingService extends BaseService {
 };
     context?: HttpContext
   }
-): Observable<StrictHttpResponse<TrainingListResponse>> {
+): Observable<StrictHttpResponse<ProjectListResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, TrainingService.GetTrainingsPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ProjectService.GetProjectsPath, 'get');
     if (params) {
       rb.query('sort', params.sort, {});
       rb.query('pagination[withCount]', params['pagination[withCount]'], {});
@@ -106,18 +106,18 @@ export class TrainingService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<TrainingListResponse>;
+        return r as StrictHttpResponse<ProjectListResponse>;
       })
     );
   }
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `getTrainings$Response()` instead.
+   * To access the full response (for headers, for example), `getProjects$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getTrainings(params?: {
+  getProjects(params?: {
 
     /**
      * Sort by attributes ascending (asc) or descending (desc)
@@ -166,31 +166,31 @@ export class TrainingService extends BaseService {
 };
     context?: HttpContext
   }
-): Observable<TrainingListResponse> {
+): Observable<ProjectListResponse> {
 
-    return this.getTrainings$Response(params).pipe(
-      map((r: StrictHttpResponse<TrainingListResponse>) => r.body as TrainingListResponse)
+    return this.getProjects$Response(params).pipe(
+      map((r: StrictHttpResponse<ProjectListResponse>) => r.body as ProjectListResponse)
     );
   }
 
   /**
-   * Path part for operation postTrainings
+   * Path part for operation postProjects
    */
-  static readonly PostTrainingsPath = '/trainings';
+  static readonly PostProjectsPath = '/projects';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `postTrainings()` instead.
+   * To access only the response body, use `postProjects()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  postTrainings$Response(params: {
+  postProjects$Response(params: {
     context?: HttpContext
-    body: TrainingRequest
+    body: ProjectRequest
   }
-): Observable<StrictHttpResponse<TrainingResponse>> {
+): Observable<StrictHttpResponse<ProjectResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, TrainingService.PostTrainingsPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, ProjectService.PostProjectsPath, 'post');
     if (params) {
       rb.body(params.body, 'application/json');
     }
@@ -202,46 +202,46 @@ export class TrainingService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<TrainingResponse>;
+        return r as StrictHttpResponse<ProjectResponse>;
       })
     );
   }
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `postTrainings$Response()` instead.
+   * To access the full response (for headers, for example), `postProjects$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  postTrainings(params: {
+  postProjects(params: {
     context?: HttpContext
-    body: TrainingRequest
+    body: ProjectRequest
   }
-): Observable<TrainingResponse> {
+): Observable<ProjectResponse> {
 
-    return this.postTrainings$Response(params).pipe(
-      map((r: StrictHttpResponse<TrainingResponse>) => r.body as TrainingResponse)
+    return this.postProjects$Response(params).pipe(
+      map((r: StrictHttpResponse<ProjectResponse>) => r.body as ProjectResponse)
     );
   }
 
   /**
-   * Path part for operation getTrainingsId
+   * Path part for operation getProjectsId
    */
-  static readonly GetTrainingsIdPath = '/trainings/{id}';
+  static readonly GetProjectsIdPath = '/projects/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getTrainingsId()` instead.
+   * To access only the response body, use `getProjectsId()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getTrainingsId$Response(params: {
+  getProjectsId$Response(params: {
     id: number;
     context?: HttpContext
   }
-): Observable<StrictHttpResponse<TrainingResponse>> {
+): Observable<StrictHttpResponse<ProjectResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, TrainingService.GetTrainingsIdPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ProjectService.GetProjectsIdPath, 'get');
     if (params) {
       rb.path('id', params.id, {});
     }
@@ -253,47 +253,47 @@ export class TrainingService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<TrainingResponse>;
+        return r as StrictHttpResponse<ProjectResponse>;
       })
     );
   }
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `getTrainingsId$Response()` instead.
+   * To access the full response (for headers, for example), `getProjectsId$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getTrainingsId(params: {
+  getProjectsId(params: {
     id: number;
     context?: HttpContext
   }
-): Observable<TrainingResponse> {
+): Observable<ProjectResponse> {
 
-    return this.getTrainingsId$Response(params).pipe(
-      map((r: StrictHttpResponse<TrainingResponse>) => r.body as TrainingResponse)
+    return this.getProjectsId$Response(params).pipe(
+      map((r: StrictHttpResponse<ProjectResponse>) => r.body as ProjectResponse)
     );
   }
 
   /**
-   * Path part for operation putTrainingsId
+   * Path part for operation putProjectsId
    */
-  static readonly PutTrainingsIdPath = '/trainings/{id}';
+  static readonly PutProjectsIdPath = '/projects/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `putTrainingsId()` instead.
+   * To access only the response body, use `putProjectsId()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  putTrainingsId$Response(params: {
+  putProjectsId$Response(params: {
     id: number;
     context?: HttpContext
-    body: TrainingRequest
+    body: ProjectRequest
   }
-): Observable<StrictHttpResponse<TrainingResponse>> {
+): Observable<StrictHttpResponse<ProjectResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, TrainingService.PutTrainingsIdPath, 'put');
+    const rb = new RequestBuilder(this.rootUrl, ProjectService.PutProjectsIdPath, 'put');
     if (params) {
       rb.path('id', params.id, {});
       rb.body(params.body, 'application/json');
@@ -306,47 +306,47 @@ export class TrainingService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<TrainingResponse>;
+        return r as StrictHttpResponse<ProjectResponse>;
       })
     );
   }
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `putTrainingsId$Response()` instead.
+   * To access the full response (for headers, for example), `putProjectsId$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  putTrainingsId(params: {
+  putProjectsId(params: {
     id: number;
     context?: HttpContext
-    body: TrainingRequest
+    body: ProjectRequest
   }
-): Observable<TrainingResponse> {
+): Observable<ProjectResponse> {
 
-    return this.putTrainingsId$Response(params).pipe(
-      map((r: StrictHttpResponse<TrainingResponse>) => r.body as TrainingResponse)
+    return this.putProjectsId$Response(params).pipe(
+      map((r: StrictHttpResponse<ProjectResponse>) => r.body as ProjectResponse)
     );
   }
 
   /**
-   * Path part for operation deleteTrainingsId
+   * Path part for operation deleteProjectsId
    */
-  static readonly DeleteTrainingsIdPath = '/trainings/{id}';
+  static readonly DeleteProjectsIdPath = '/projects/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `deleteTrainingsId()` instead.
+   * To access only the response body, use `deleteProjectsId()` instead.
    *
    * This method doesn't expect any request body.
    */
-  deleteTrainingsId$Response(params: {
+  deleteProjectsId$Response(params: {
     id: number;
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<number>> {
 
-    const rb = new RequestBuilder(this.rootUrl, TrainingService.DeleteTrainingsIdPath, 'delete');
+    const rb = new RequestBuilder(this.rootUrl, ProjectService.DeleteProjectsIdPath, 'delete');
     if (params) {
       rb.path('id', params.id, {});
     }
@@ -365,17 +365,17 @@ export class TrainingService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `deleteTrainingsId$Response()` instead.
+   * To access the full response (for headers, for example), `deleteProjectsId$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  deleteTrainingsId(params: {
+  deleteProjectsId(params: {
     id: number;
     context?: HttpContext
   }
 ): Observable<number> {
 
-    return this.deleteTrainingsId$Response(params).pipe(
+    return this.deleteProjectsId$Response(params).pipe(
       map((r: StrictHttpResponse<number>) => r.body as number)
     );
   }

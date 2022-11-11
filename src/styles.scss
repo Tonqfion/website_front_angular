@@ -2,14 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import "styles/_constants.scss";
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  position: relative;
-  font-family: 'Roboto', sans-serif;
-  background: var(--secondary);
+  margin: 0;
+  background: #f3f6f4;
+}
+
+.mat-typography {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
 }

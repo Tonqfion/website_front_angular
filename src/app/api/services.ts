@@ -1,6 +1,7 @@
 export { CompanyService } from './services/company.service';
 export { ExperienceService } from './services/experience.service';
 export { IntroductionService } from './services/introduction.service';
+export { ProjectService } from './services/project.service';
 export { SchoolService } from './services/school.service';
 export { SkillService } from './services/skill.service';
 export { SkillCategoryService } from './services/skill-category.service';

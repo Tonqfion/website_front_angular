@@ -15,6 +15,11 @@ export { IntroductionListResponseDataItem } from './models/introduction-list-res
 export { IntroductionListResponse } from './models/introduction-list-response';
 export { IntroductionResponseDataObject } from './models/introduction-response-data-object';
 export { IntroductionResponse } from './models/introduction-response';
+export { ProjectRequest } from './models/project-request';
+export { ProjectListResponseDataItem } from './models/project-list-response-data-item';
+export { ProjectListResponse } from './models/project-list-response';
+export { ProjectResponseDataObject } from './models/project-response-data-object';
+export { ProjectResponse } from './models/project-response';
 export { SchoolRequest } from './models/school-request';
 export { SchoolListResponseDataItem } from './models/school-list-response-data-item';
 export { SchoolListResponse } from './models/school-list-response';
