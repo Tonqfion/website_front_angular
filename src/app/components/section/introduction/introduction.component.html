@@ -1,16 +1,13 @@
-<section id="introduction">
-  <ng-container *ngIf="!isUndefinedIntro()">
-    <header class="hero">
-      <h1>{{introduction?.attributes?.userTitle}}
-        <span>Ingénieur informaticieeeeeeen</span></h1>
-      <img/>
-    </header>
-    <div>
-      <p>{{introduction?.attributes?.profilePicture?.data?.attributes?.url}}</p>
-      <markdown [data]="introduction?.attributes?.aboutMe"></markdown>
+<header id="introduction">
+  <div *ngIf="!isUndefinedIntro()" [ngClass]="isMobile ? 'mobile' : 'desktop'" class="introduction-container">
+    <h1>{{introduction?.attributes?.userTitle}}
+      <span>Ingénieur informaticieeeeeeen</span></h1>
+    <markdown [data]="introduction?.attributes?.aboutMe"></markdown>
+    <div class="profile-picture-container">
+      <img [src]="profilePictureLogoUrl"/>
     </div>
-  </ng-container>
+  </div>
   <ng-container *ngIf="isUndefinedIntro()">
     <mat-spinner></mat-spinner>
   </ng-container>
-</section>
+</header>

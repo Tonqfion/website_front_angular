@@ -1,8 +1,49 @@
-h1 {
+header .introduction-container {
+  display: grid;
+  gap: 1rem;
+}
+header .introduction-container .profile-picture-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+header .introduction-container.desktop {
+  grid-template-columns: fit-content(100%);
+  grid-auto-rows: minmax(100px, auto);
+}
+header .introduction-container.desktop h1 {
+  grid-column: 1/2;
+  grid-row: 1;
+}
+header .introduction-container.desktop markdown {
+  grid-column: 1/2;
+  grid-row: 2;
+}
+header .introduction-container.desktop .profile-picture-container {
+  grid-column: 3;
+  grid-row: 1/3;
+}
+header .introduction-container.mobile {
+  grid-template-columns: fit-content(100%);
+  grid-auto-rows: minmax(100px, auto);
+}
+header .introduction-container.mobile h1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+header .introduction-container.mobile markdown {
+  grid-column: 1;
+  grid-row: 3;
+}
+header .introduction-container.mobile .profile-picture-container {
+  grid-column: 1;
+  grid-row: 2;
+}
+header .introduction-container h1 {
   color: var(--primary);
   position: relative;
-  padding: 0;
-  margin: 0;
   font-weight: 300;
   font-size: 40px;
   -webkit-transition: all 0.4s ease 0s;
@@ -10,7 +51,7 @@ h1 {
   transition: all 0.4s ease 0s;
   text-transform: capitalize;
 }
-h1 span {
+header .introduction-container h1 span {
   display: block;
   font-size: 13px;
   font-weight: 500;
@@ -20,7 +61,7 @@ h1 span {
   padding-left: 0.25em;
   color: rgba(0, 0, 0, 0.4);
 }
-h1:before {
+header .introduction-container h1:before {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -28,6 +69,13 @@ h1:before {
   height: 2px;
   content: "";
   background-color: var(--accent);
+}
+header .introduction-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid 2px var(--dark);
 }
 
 /*# sourceMappingURL=introduction.component.css.map */

@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {IntroductionService} from "../../../api/services/introduction.service";
 import {IntroductionResponseDataObject} from "../../../api/models/introduction-response-data-object";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-introduction',
@@ -10,7 +11,9 @@ import {IntroductionResponseDataObject} from "../../../api/models/introduction-r
 export class IntroductionComponent implements OnInit {
   titleText: string;
   logoClass: string;
+  isMobile: boolean = false;
   introduction?: IntroductionResponseDataObject;
+  profilePictureLogoUrl?: string;
 
   constructor(private introductionService: IntroductionService) {
     this.titleText = "Introduction";
@@ -18,6 +21,7 @@ export class IntroductionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isMobile = window.innerWidth <= 768;
     this.getIntroduction();
   }
 
@@ -26,11 +30,18 @@ export class IntroductionComponent implements OnInit {
   }
 
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    const screenWidth = window.innerWidth;
+    this.isMobile = screenWidth <= 768;
+  }
+
+
   getIntroduction() {
     this.introductionService.getIntroductionsId({id: 1}).subscribe({
       next: (data) => {
         this.introduction = data.data;
-        console.log(this.introduction);
+        this.profilePictureLogoUrl = environment.BACKEND_URL + this.introduction?.attributes?.profilePicture?.data?.attributes?.url;
       },
       error: (err) => {
       }

@@ -3,4 +3,8 @@
     [logoClass]="logoClass"
     [titleText]="titleText"
   ></app-section-title>
+  <div class="skills-container">
+    <app-unique-skill *ngFor="let skill of skills"
+                      [skill]="skill"></app-unique-skill>
+  </div>
 </section>

@@ -4,7 +4,6 @@ export { CompanyListResponseDataItem } from './models/company-list-response-data
 export { CompanyListResponse } from './models/company-list-response';
 export { CompanyResponseDataObject } from './models/company-response-data-object';
 export { CompanyResponse } from './models/company-response';
-export { InfoAdressComponent } from './models/info-adress-component';
 export { ExperienceRequest } from './models/experience-request';
 export { ExperienceListResponseDataItem } from './models/experience-list-response-data-item';
 export { ExperienceListResponse } from './models/experience-list-response';

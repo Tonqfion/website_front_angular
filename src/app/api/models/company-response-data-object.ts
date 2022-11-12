@@ -1,9 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
-import { InfoAdressComponent } from './info-adress-component';
 export interface CompanyResponseDataObject {
   attributes?: {
-'companyAddress'?: InfoAdressComponent;
 'companyName'?: string;
 'companyLogo'?: {
 'data'?: {

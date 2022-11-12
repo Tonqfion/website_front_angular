@@ -9,15 +9,6 @@ export interface TrainingResponseDataObject {
 'data'?: {
 'id'?: number;
 'attributes'?: {
-'schoolAddress'?: {
-'id'?: number;
-'streetName'?: string;
-'streetNumber'?: string;
-'cityName'?: string;
-'zipCode'?: string;
-'countryName'?: string;
-'region'?: string;
-};
 'schoolName'?: string;
 'schoolLogo'?: {
 'data'?: {

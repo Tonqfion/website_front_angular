@@ -10,15 +10,6 @@ export interface ExperienceListResponseDataItem {
 'data'?: {
 'id'?: number;
 'attributes'?: {
-'companyAddress'?: {
-'id'?: number;
-'streetName'?: string;
-'streetNumber'?: string;
-'cityName'?: string;
-'zipCode'?: string;
-'countryName'?: string;
-'region'?: string;
-};
 'companyName'?: string;
 'companyLogo'?: {
 'data'?: {

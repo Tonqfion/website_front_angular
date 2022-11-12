@@ -20,7 +20,10 @@ import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatButtonModule} from "@angular/material/button";
 import {MarkdownModule} from "ngx-markdown";
-import { DateContainerComponent } from './components/commons/date-container/date-container.component';
+import {DateContainerComponent} from './components/commons/date-container/date-container.component';
+import {UniqueSkillComponent} from './components/section/skills/unique-skill/unique-skill.component';
+import {UniqueProjectComponent} from './components/section/projects/unique-project/unique-project.component';
+import {UniqueTrainingComponent} from './components/section/training/unique-training/unique-training.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { DateContainerComponent } from './components/commons/date-container/date
     UniqueExperienceComponent,
     SidenavComponent,
     BodyComponent,
-    DateContainerComponent
+    DateContainerComponent,
+    UniqueSkillComponent,
+    UniqueProjectComponent,
+    UniqueTrainingComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserSkillService} from "../../../api/services/user-skill.service";
+import {UserSkillListResponseDataItem} from "../../../api/models/user-skill-list-response-data-item";
 
 @Component({
   selector: 'app-skills',
@@ -9,7 +10,7 @@ import {UserSkillService} from "../../../api/services/user-skill.service";
 export class SkillsComponent implements OnInit {
   titleText: string;
   logoClass: string;
-  skills: any[] = [];
+  skills?: UserSkillListResponseDataItem[];
 
   constructor(private userSkillService: UserSkillService) {
     this.titleText = "Compétences";
@@ -23,7 +24,7 @@ export class SkillsComponent implements OnInit {
   getAllUserSkills() {
     this.userSkillService.getUserSkills().subscribe({
       next: (data) => {
-        console.log(data);
+        this.skills = data.data;
       },
       error: (err) => {
         console.log(err);

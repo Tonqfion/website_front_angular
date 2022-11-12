@@ -1,9 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
-import { InfoAdressComponent } from './info-adress-component';
 export interface SchoolResponseDataObject {
   attributes?: {
-'schoolAddress'?: InfoAdressComponent;
 'schoolName'?: string;
 'schoolLogo'?: {
 'data'?: {
