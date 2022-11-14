@@ -6,5 +6,6 @@
   <div class="experiences-container">
     <app-unique-experience *ngFor="let experience of experiences"
                            [experience]="experience"></app-unique-experience>
+    <p *ngIf="errorMessage != undefined" class="error-message">{{errorMessage}}</p>
   </div>
 </section>

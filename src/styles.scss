@@ -21,3 +21,10 @@ body {
 .mat-typography {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.error-message {
+  text-align: center;
+  font-weight: 700;
+  color: var(--warn);
+  font-size: 2rem;
+}

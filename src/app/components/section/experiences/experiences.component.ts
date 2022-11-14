@@ -10,6 +10,7 @@ import {ExperienceListResponseDataItem} from "../../../api/models/experience-lis
 export class ExperiencesComponent implements OnInit {
   titleText: string;
   logoClass: string;
+  errorMessage?: string;
   experiences?: ExperienceListResponseDataItem[];
 
   constructor(private experienceService: ExperienceService) {
@@ -21,15 +22,13 @@ export class ExperiencesComponent implements OnInit {
     this.getAllExperiences();
   }
 
-
   getAllExperiences() {
     this.experienceService.getExperiences().subscribe({
       next: (data) => {
         this.experiences = data.data;
-        console.log(this.experiences);
       },
       error: (err) => {
-        console.log(err);
+        this.errorMessage = err.statusText;
       }
     })
   }

@@ -1,1 +1,15 @@
-<p>unique-skill works!</p>
+<mat-card>
+  <div class="skill-card-main-content">
+    <mat-card-title-group>
+      <mat-card-title>
+        {{skill?.attributes?.skill?.data?.attributes?.skillName}}
+      </mat-card-title>
+      <mat-card-subtitle *ngFor="let subCategory of skillSubCategories">
+        {{subCategory?.attributes?.subCategoryName}}
+      </mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      {{skill?.attributes?.userSkillDescription}}</mat-card-content>
+  </div>
+  <img [alt]="skill?.attributes?.skill?.data?.attributes?.skillName" [src]="skillLogoUrl" mat-card-md-image/>
+</mat-card>

@@ -6,13 +6,12 @@
     <mat-card-header>
       <mat-card-title>{{experience?.attributes?.jobTitle}}</mat-card-title>
       <mat-card-subtitle>{{experience?.attributes?.company?.data?.attributes?.companyName}}</mat-card-subtitle>
-      <img
-        [src]="companyLogoUrl"
-        mat-card-avatar/>
+      <img [alt]="experience?.attributes?.company?.data?.attributes?.companyName"
+           [src]="companyLogoUrl"
+           mat-card-avatar/>
     </mat-card-header>
     <mat-card-content class="experience-card-content">
       <markdown [data]="experience?.attributes?.jobDescription"></markdown>
     </mat-card-content>
   </mat-card>
-
 </div>
