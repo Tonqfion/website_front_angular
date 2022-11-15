@@ -23,11 +23,11 @@ jobs:
       - name: List Files in Distribution Directory
         run: ls -R ./dist
 
-      - name: SSH Deploy
-        uses: SamKirkland/web-deploy@v1
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-          target-server: ${{ secrets.SERVER }}
-          remote-user: ${{ secrets.USERNAME }}
-          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source-path: ./dist/website_front_angular/
-          destination-path: public_html/angular_portfolio/
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/website_front_angular/
+          server-dir: public_html/angular_portfolio/
