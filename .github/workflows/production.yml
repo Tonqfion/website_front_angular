@@ -23,7 +23,7 @@ jobs:
       - name: List Files in Distribution Directory
         run: ls -R ./dist
 
-      - name: FTP Deploy
+      - name: FTP Deployment
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
           server: ${{ secrets.FTP_SERVER }}
