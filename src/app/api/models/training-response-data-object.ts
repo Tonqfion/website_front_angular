@@ -3,7 +3,7 @@
 export interface TrainingResponseDataObject {
   attributes?: {
 'trainingName'?: string;
-'trainingLevel'?: 'Undergraduate' | 'Post-Graduate' | 'Master\'s Degree' | 'Doctorate';
+'trainingLevel'?: 'Baccalaur\xE9at / Titre Pro niveau 4' | 'Titre Pro niveau 5 (\xE9quiv. Bac +2)' | 'Licence Bac +3' | 'Titre Pro niveau 6 (\xE9quiv. Bac +3)' | 'Maitrise Bac +4' | 'Post-Graduate (\xE9quiv. Bac +4)';
 'trainingDescription'?: string;
 'school'?: {
 'data'?: {
