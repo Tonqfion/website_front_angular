@@ -29,5 +29,5 @@ jobs:
           target-server: ${{ secrets.SERVER }}
           remote-user: ${{ secrets.USERNAME }}
           private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source-path: ./dist/website_front_angular/*
+          source-path: ./dist/website_front_angular/
           destination-path: ~/public_html/angular_portfolio/
