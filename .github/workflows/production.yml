@@ -30,4 +30,4 @@ jobs:
           remote-user: ${{ secrets.USERNAME }}
           private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           source-path: ./dist/website_front_angular/
-          destination-path: ~/public_html/angular_portfolio/
+          destination-path: /home/iwng4666/public_html/angular_portfolio/
