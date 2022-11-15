@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {environment} from "../../../../../environments/environment";
+import {TrainingListResponseDataItem} from "../../../../api/models/training-list-response-data-item";
 
 @Component({
   selector: 'app-unique-training',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unique-training.component.scss']
 })
 export class UniqueTrainingComponent implements OnInit {
+  schoolLogoUrl?: string;
 
-  constructor() { }
+  @Input()
+  training?: TrainingListResponseDataItem;
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+    this.schoolLogoUrl = environment.BACKEND_URL + this.training?.attributes?.school?.data?.attributes?.schoolLogo?.data?.attributes?.url;
+  }
 }

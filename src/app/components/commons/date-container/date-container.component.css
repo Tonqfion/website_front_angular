@@ -1,13 +1,30 @@
 p {
   font-size: 1rem;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
   font-weight: 700;
   color: var(--accent);
+  margin-bottom: 0;
 }
-
+@media only screen and (max-width: 768px) {
+  p {
+    padding: 0 0.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  p:nth-of-type(2n) {
+    border-left: 2px solid var(--primary);
+  }
+}
 p:first-of-type {
   border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 768px) {
+  p:first-of-type {
+    border-bottom: inherit;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=date-container.component.css.map */

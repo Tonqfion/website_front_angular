@@ -1,1 +1,18 @@
-<p>unique-training works!</p>
+<div class="unique-training-container">
+  <app-date-container
+    [completeEndDate]="training?.attributes?.endDate"
+    [completeStartDate]="training?.attributes?.startDate"></app-date-container>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{training?.attributes?.trainingName}}</mat-card-title>
+      <mat-card-subtitle>{{training?.attributes?.school?.data?.attributes?.schoolName}}
+        - {{training?.attributes?.trainingLevel}}</mat-card-subtitle>
+      <img [alt]="training?.attributes?.school?.data?.attributes?.schoolName"
+           [src]="schoolLogoUrl"
+           mat-card-avatar/>
+    </mat-card-header>
+    <mat-card-content class="training-card-content">
+      <markdown [data]="training?.attributes?.trainingDescription"></markdown>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -18,6 +18,11 @@ body {
   background: #f3f6f4;
 }
 
+app-date-container {
+  align-self: center;
+  margin: .5rem 2rem .5rem .5rem;
+}
+
 .mat-typography {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -27,4 +32,14 @@ body {
   font-weight: 700;
   color: var(--warn);
   font-size: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+app-date-container {
+  @media only screen and (max-width: 768px) {
+    display: flex;
+  }
 }

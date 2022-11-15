@@ -7,5 +7,7 @@ export interface TrainingRequest {
 'trainingDescription'?: string;
 'school'?: (number | string);
 'owner'?: (number | string);
+'startDate': string;
+'endDate'?: string;
 };
 }

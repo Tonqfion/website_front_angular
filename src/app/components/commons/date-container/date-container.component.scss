@@ -1,11 +1,29 @@
+
 p {
   font-size: 1rem;
-  padding-bottom: .5rem;
-  margin-bottom: .5rem;
   font-weight: 700;
   color: var(--accent);
-}
+  margin-bottom: 0;
 
-p:first-of-type {
-  border-bottom: 2px solid var(--primary);
+  @media only screen and (max-width: 768px) {
+    padding: 0 .5rem;
+  }
+
+  &:nth-of-type(2n) {
+    @media only screen and (max-width: 768px) {
+      border-left: 2px solid var(--primary);
+    }
+  }
+
+  &:first-of-type {
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+
+    @media only screen and (max-width: 768px) {
+      border-bottom: inherit;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
 }

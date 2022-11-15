@@ -10,7 +10,8 @@ import {TrainingListResponseDataItem} from "../../../api/models/training-list-re
 export class TrainingComponent implements OnInit {
   titleText: string;
   logoClass: string;
-  trainings: TrainingListResponseDataItem[] | undefined;
+  trainings?: TrainingListResponseDataItem[];
+  errorMessage?: string;
 
   constructor(private trainingsService: TrainingService) {
     this.titleText = "Formation";
@@ -22,20 +23,12 @@ export class TrainingComponent implements OnInit {
   }
 
   getAllTrainings() {
-    this.trainingsService.getTrainings({
-      populate: 'school'
-    }).subscribe({
+    this.trainingsService.getTrainings().subscribe({
       next: (data) => {
         this.trainings = data.data;
-        console.log(this.trainings);
-        if (this.trainings!!) {
-          for (let training of this.trainings) {
-            console.log(training.attributes?.school?.data?.attributes?.schoolLogo);
-          }
-        }
       },
       error: (err) => {
-        console.log(err);
+        this.errorMessage = err.statusText;
       }
     })
   }

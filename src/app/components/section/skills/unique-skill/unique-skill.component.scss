@@ -3,28 +3,32 @@ mat-card {
   display: flex;
   justify-content: space-between;
   width: 400px;
-  align-items: start;
-  height: 180px;
+  align-items: flex-start;
+  height: 100%;
+
+  @media only screen and (max-width: 1080px) {
+    width: 400px;
+  }
 
   .skill-card-main-content {
     display: flex;
     flex-direction: column;
+    height: 100%;
 
-    mat-card-title {
-      margin-bottom: .5rem;
-    }
+    mat-card-title-group {
+      mat-card-title {
+        margin-bottom: .5rem;
+      }
 
-    mat-card-subtitle {
-      margin-bottom: .2rem;
-    }
-
-    mat-card-content {
-      flex-grow: 1;
+      mat-card-subtitle {
+        margin-bottom: .2rem;
+      }
     }
   }
 
   img {
     align-self: center;
+    display: inline-block;
     height: 75px;
     width: 75px;
     margin-left: .5rem;
@@ -33,5 +37,4 @@ mat-card {
     border-radius: 50%;
     border: solid 2px var(--dark);
   }
-
 }

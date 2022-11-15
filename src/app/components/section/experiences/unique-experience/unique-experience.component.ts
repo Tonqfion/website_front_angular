@@ -19,5 +19,4 @@ export class UniqueExperienceComponent implements OnInit {
   ngOnInit(): void {
     this.companyLogoUrl = environment.BACKEND_URL + this.experience?.attributes?.company?.data?.attributes?.companyLogo?.data?.attributes?.url;
   }
-
 }

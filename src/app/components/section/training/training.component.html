@@ -3,4 +3,9 @@
     [logoClass]="logoClass"
     [titleText]="titleText"
   ></app-section-title>
+  <div class="trainings-container">
+    <app-unique-training *ngFor="let training of trainings"
+                         [training]="training"></app-unique-training>
+    <p *ngIf="errorMessage != undefined" class="error-message">{{errorMessage}}</p>
+  </div>
 </section>

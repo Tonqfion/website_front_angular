@@ -1,4 +1,4 @@
-<div [ngClass]="isOpen ? 'sidenav-collapsed': ''" class="sidenav">
+<div [ngClass]="isOpen ? 'sidenav-open': ''" class="sidenav">
   <div class="logo-container">
     <button (click)="toggleCollapse()" class="logo">B</button>
     <div *ngIf="isOpen" @fadeInOut class="logo-text">Bertrand B</div>

@@ -707,6 +707,8 @@ export interface TrainingListResponseDataItem {
 };
 };
 };
+'startDate'?: string;
+'endDate'?: string;
 'createdAt'?: string;
 'updatedAt'?: string;
 'publishedAt'?: string;
