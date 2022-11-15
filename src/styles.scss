@@ -19,10 +19,12 @@ body {
 }
 
 app-date-container {
+  display: flex;
+  flex-direction: column-reverse;
   align-self: center;
   margin: .5rem 2rem .5rem .5rem;
   @media only screen and (max-width: 768px) {
-    display: flex;
+    flex-direction: row;
   }
 }
 
