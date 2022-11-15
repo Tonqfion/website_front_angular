@@ -14,10 +14,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Dependencies
+      - name: Installing Dependencies...
         run: npm ci
 
-      - name: Build Application
+      - name: Building Application...
         run: npm run build
 
       - name: List Files in Distribution Directory
