@@ -1,15 +1,10 @@
 mat-card {
-  margin: 1rem;
+  margin: 1rem 0 0 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 400px;
-  align-items: flex-start;
+  align-items: center;
   height: 100%;
-}
-@media only screen and (max-width: 1080px) {
-  mat-card {
-    width: 400px;
-  }
 }
 mat-card .skill-card-main-content {
   display: flex;
@@ -21,6 +16,9 @@ mat-card .skill-card-main-content mat-card-title-group mat-card-title {
 }
 mat-card .skill-card-main-content mat-card-title-group mat-card-subtitle {
   margin-bottom: 0.2rem;
+}
+mat-card .skill-card-main-content mat-card-content {
+  margin-bottom: 0;
 }
 mat-card img {
   align-self: center;

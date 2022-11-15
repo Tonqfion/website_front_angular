@@ -26,6 +26,11 @@ app-date-container {
   align-self: center;
   margin: 0.5rem 2rem 0.5rem 0.5rem;
 }
+@media only screen and (max-width: 768px) {
+  app-date-container {
+    display: flex;
+  }
+}
 
 .mat-typography {
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -40,12 +45,6 @@ app-date-container {
 
 section {
   margin-bottom: 2rem;
-}
-
-@media only screen and (max-width: 768px) {
-  app-date-container {
-    display: flex;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */
