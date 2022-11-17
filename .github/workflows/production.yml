@@ -23,11 +23,11 @@ jobs:
       - name: List Files in Distribution Directory
         run: ls -R ./dist
 
-      - name: Deployment using FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      - name: 📂 Sync Files
+        uses: SamKirkland/web-deploy@v1
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/website_front_angular/
-          server-dir: public_html/angular_portfolio/
+          target-server: bertrandbouland.com
+          remote-user: iwng4666
+          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          destination-path: ~/public_html/angular_portfolio/
+          source-path: ./dist/website_front_angular/
