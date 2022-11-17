@@ -23,7 +23,7 @@ jobs:
       - name: List Files in Distribution Directory
         run: ls -R ./dist
 
-      - name: 📂 Sync Files
+      - name: 📂 Sync Coucou
         uses: SamKirkland/web-deploy@v1
         with:
           target-server: bertrandbouland.com
